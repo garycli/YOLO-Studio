@@ -11,24 +11,26 @@
         <img src="https://img.shields.io/badge/Python-3.7+-blue.svg" alt="Python 3.7+"/>
         <img src="https://img.shields.io/badge/Framework-Tkinter-green.svg" alt="Tkinter"/>
         <img src="https://img.shields.io/badge/AI-YOLO-yellow.svg" alt="YOLO"/>
-        <img src="https://img.shields.io/badge/License-MIT-orange.svg" alt="License: MIT"/>
+        <img src="https://img.shields.io/badge/License-Apache--2.0-orange.svg" alt="License: Apache-2.0"/>
     </p>
 </div>
 
 ## ✨ Project Overview
 
-YOLO Studio is a powerful desktop application that integrates the complete workflow for object detection models, including data annotation, model training, and model export/deployment. It supports mainstream algorithms such as YOLOv5 and YOLOv8. With its intuitive user interface, you can complete the entire process from annotation to deployment without programming knowledge. Whether you're a computer vision researcher, machine learning engineer, or developer looking to integrate AI into your products, YOLO Studio is your ideal tool.
+YOLO Studio is a desktop application for rectangular image annotation and configurable YOLOv5/YOLOv8 training, with model export and inference modules.
+
+**Public repository scope:** The optional `security` licensing module is not included. The application defaults to free mode; export, inference, and checkpoint resumption are gated by professional-license checks. Professional screenshots and source modules do not establish that those workflows are available in this checkout.
 
 ## 🚀 Key Features
 
-- **Multi-functional Annotation Tool**: Intuitive graphical interface for rectangular, polygon, and other annotation operations
-- **Compatible with Multiple YOLO Versions**: Supports training with YOLOv5, YOLOv8, and other mainstream algorithms
-- **One-Click Training**: Simplified model training process with built-in parameter optimization recommendations
-- **Flexible Export Formats**: Support for ONNX, TensorRT, OpenVINO, and other inference frameworks
-- **Cross-Platform Support**: Compatible with Windows, Linux, and macOS
+- **Rectangle Annotation Tool**: Graphical interface for bounding-box annotation
+- **YOLO Training Integration**: Configuration and launch paths for YOLOv5 and YOLOv8
+- **Training Configuration**: Graphical controls for training parameters and process launch
+- **Export Modules**: ONNX, TFLite, and OpenVINO conversion paths; require professional access and format-specific dependencies
+- **Platform Targets**: Windows, Linux, and macOS code paths; this repository does not include a cross-platform validation matrix
 - **Clean Interface Design**: User-friendly workflow designed for non-technical users
-- **Built-in Inference Function**: Test model effectiveness immediately after training
-- **Batch Operation Support**: Efficiently process large datasets
+- **Inference Module**: Image/video inference code with detection visualization; requires professional access
+- **Dataset Navigation**: Load an image folder and navigate annotations
 
 ## 📸 Interface Preview - Professional Version
 
@@ -50,8 +52,8 @@ YOLO Studio is a powerful desktop application that integrates the complete workf
 
 ```bash
 # Clone the repository
-git clone https://github.com/PrettyMyGirlZyy4Embedded/yolo-studio.git
-cd yolo-studio
+git clone https://github.com/garycli/YOLO-Studio.git
+cd YOLO-Studio
 
 # Install dependencies
 pip install -r requirements.txt
@@ -60,7 +62,7 @@ pip install -r requirements.txt
 python main.py
 ```
 
-The program will automatically check and install necessary dependencies.
+The application includes dependency checks and installation helpers. YOLO code, weights, and conversion-specific dependencies still need to be configured for the selected workflow.
 
 ### Language Settings
 
@@ -84,42 +86,42 @@ Currently supported languages:
 - Convenient image navigation and zoom functions
 - Automatic saving and restoration of annotation progress
 - Shortcut key support to improve annotation efficiency
-- Annotation data statistics and visualization
+- Annotation preview and undo/redo history
 
 ### 2. Model Training Module
 
-- Integrated YOLOv5/YOLOv8 code repositories
+- YOLOv5 code-path configuration and YOLOv8 package integration
 - Visual training parameter configuration
-- Real-time training progress and loss curve display
-- Automatic evaluation of training results
-- Checkpoint resumption support
+- Training logs, progress, and parsed loss values
+- Display of training output reported by the selected YOLO backend
+- Checkpoint resumption code (requires professional access)
 - Pre-trained model selection
 
 ### 3. Model Export Module
 
-- Multiple export formats: ONNX, TensorRT, TFLite, OpenVINO, etc.
-- Model quantization options: INT8/FP16 precision
+- Conversion paths: PyTorch to ONNX, ONNX to TFLite, and ONNX to OpenVINO
+- TFLite FP16/INT8 options and OpenVINO precision settings; support depends on the conversion path
 - Visual export parameter configuration
-- Automatic verification of exported model correctness
+- ONNX structural checks when the ONNX dependency is available; no numerical-equivalence guarantee
 
 ### 4. Inference Testing Module
 
 - Image and video inference support
-- Batch inference capability
+- Single image or video input selection
 - Inference result visualization
-- Performance metrics evaluation
+- Detection box, class, and confidence display
 
 ## 🛠️ Version Comparison
 
+Professional access depends on the omitted licensing module. The table describes the UI's access paths, not a verified professional release; image/class limits cannot be confirmed from this public snapshot.
+
 | Feature | Open Source Version | Professional Version |
 |---------|---------------------|----------------------|
-| Data Annotation | ✅ Rectangle annotation | ✅ All shapes annotation |
-| Model Training | ✅ Basic training | ✅ Advanced training parameters |
-| Model Export | ❌ | ✅ Multiple format export |
-| Inference Testing | ❌ | ✅ |
-| Annotation Limit | 100 images | Unlimited |
-| Training Parameter Limit | Basic parameters | All parameters |
-| Class Count Limit | 10 classes | Unlimited |
+| Data Annotation | ✅ Rectangle annotation | Rectangle annotation code; additional shapes not implemented here |
+| Model Training | Basic training configuration | License-dependent parameter checks |
+| Model Export | License-gated | Conversion code present; licensing module required |
+| Inference Testing | License-gated | Inference code present; licensing module required |
+| Checkpoint Resumption | License-gated | Resumption code present; licensing module required |
 
 ## 🤝 How to Contribute
 
@@ -143,7 +145,7 @@ This project is licensed under the Apache-2.0 License. See the [LICENSE](LICENSE
 
 ## 📬 Contact
 
-- For project issues, please use [GitHub Issues](https://github.com/PrettyMyGirlZyy4Embedded/yolo-studio/issues)
+- For project issues, please use [GitHub Issues](https://github.com/garycli/YOLO-Studio/issues)
 - For business cooperation or to obtain the professional version and license, please contact: its.jianghe@gmail.com
 
 ---
